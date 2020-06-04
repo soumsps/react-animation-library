@@ -4,4 +4,4 @@ const SlideUpDown = () => {
   return <div></div>;
 };
 
-export default SlideUpDown;
+export { SlideUpDown };

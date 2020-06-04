@@ -4,4 +4,4 @@ const Pulse = () => {
   return <div></div>;
 };
 
-export default Pulse;
+export { Pulse };
