@@ -1,7 +1,8 @@
 import React from 'react';
-//import { pulse } from '../simple-anime-lib';
+//import { Pulse } from '../simple-anime-lib';
+import DemoPic from './demo-pic.jpg';
 const PulseDemo = () => {
-  return <div>Pulse demo page</div>;
+  return <div className="demo-content">Pulse demo page</div>;
 };
 
 export default PulseDemo;

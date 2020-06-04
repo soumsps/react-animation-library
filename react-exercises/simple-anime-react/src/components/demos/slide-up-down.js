@@ -1,7 +1,8 @@
 import React from 'react';
-//import { slideUpDown } from '../simple-anime-lib';
+//import { SlideUpDown } from '../simple-anime-lib';
+import DemoPic from './demo-pic.jpg';
 const SlideUpDownDemo = () => {
-  return <div>SlideUpDownDemo demo page</div>;
+  return <div className="demo-content">SlideUpDownDemo demo page</div>;
 };
 
 export default SlideUpDownDemo;

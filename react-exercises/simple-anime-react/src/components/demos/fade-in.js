@@ -1,7 +1,8 @@
 import React from 'react';
-//import { fadeIn } from '../simple-anime-lib';
+//import { FadeIn } from '../simple-anime-lib';
+import DemoPic from './demo-pic.jpg';
 const FadeInDemo = () => {
-  return <div>FadeIn demo page</div>;
+  return <div className="demo-content">FadeIn demo page</div>;
 };
 
 export default FadeInDemo;
