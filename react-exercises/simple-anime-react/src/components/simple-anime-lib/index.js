@@ -5,9 +5,9 @@ import Pulse from './pulse';
 import SlideUpDown from './slide-up-down';
 
 export default {
-  bounce: Bounce,
-  fadeIn: FadeIn,
-  fadeOut: FadeOut,
-  pulse: Pulse,
-  slideUpDown: SlideUpDown,
+  Bounce,
+  FadeIn,
+  FadeOut,
+  Pulse,
+  SlideUpDown,
 };
