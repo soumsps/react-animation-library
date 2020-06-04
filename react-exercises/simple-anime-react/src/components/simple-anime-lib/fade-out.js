@@ -1,7 +1,7 @@
 import React from 'react';
 
-const FadeOut = () => {
-  return <div></div>;
+const FadeOut = (props) => {
+  return <>{props.children}</>;
 };
 
-export default FadeOut;
+export { FadeOut };

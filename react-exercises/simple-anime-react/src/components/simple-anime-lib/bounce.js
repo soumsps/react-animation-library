@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Bounce = () => {
-  return <div></div>;
+const Bounce = (props) => {
+  return <>{props.children}</>;
 };
 
-export default Bounce;
+export { Bounce };
