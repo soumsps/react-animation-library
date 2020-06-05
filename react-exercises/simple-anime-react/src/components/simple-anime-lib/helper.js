@@ -28,4 +28,10 @@ const useAnimationFrame = ({ delay, duration, timing, draw, isInfiniteAnimation 
   }, [animate, delay, duration, timing, draw, isInfiniteAnimation]);
 };
 
-export { useAnimationFrame };
+const timingFunction = {
+  linear: function (timeFraction) {
+    return timeFraction;
+  },
+};
+
+export { useAnimationFrame, timingFunction };
