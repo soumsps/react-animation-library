@@ -1,27 +1,30 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect, useCallback, memo } from 'react';
 import { DEFAULT_DELAY, DEFAULT_DURATION } from './constants';
 
-const FadeIn = (props) => {
+const FadeIn = memo((props) => {
   const delay = props.delay ? Number(props.delay) : DEFAULT_DELAY;
   const duration = props.duration ? Number(props.duration) : DEFAULT_DURATION;
   const isInfiniteAnimation = props.isInfiniteAnimation
     ? props.isInfiniteAnimation
     : false;
   const elementRef = useRef({ style: { opacity: 0.0 } });
+  const rafRef = useRef();
 
   const timing = useCallback((timeFraction) => {
     return timeFraction;
   }, []);
 
   const draw = useCallback((progress) => {
-    console.log('drawing', elementRef);
-    if (elementRef.current !== null) elementRef.current.style.opacity = progress;
+    console.log('drawing');
+    if (elementRef.current !== null) {
+      elementRef.current.style.opacity = progress;
+    }
   }, []);
 
-  const animate = useCallback(() => {
+  const animate = useCallback(({ duration, timing, draw, isInfiniteAnimation }) => {
     var start = performance.now();
 
-    requestAnimationFrame(function animate(time) {
+    rafRef.current = requestAnimationFrame(function animate(time) {
       var timeFraction = (time - start) / duration;
       if (timeFraction > 1) {
         if (isInfiniteAnimation) {
@@ -36,20 +39,21 @@ const FadeIn = (props) => {
       draw(progress);
 
       if (timeFraction < 1) {
-        requestAnimationFrame(animate);
+        rafRef.current = requestAnimationFrame(animate);
       }
     });
-  }, [duration, timing, draw, isInfiniteAnimation]);
+  }, []);
 
   useEffect(() => {
-    setTimeout(() => animate(), delay);
-  }, [animate, delay]);
+    setTimeout(() => animate({ duration, timing, draw, isInfiniteAnimation }), delay);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [animate, delay, duration, timing, draw, isInfiniteAnimation]);
 
   return (
     <span ref={elementRef} style={elementRef.current.style}>
       {props.children}
     </span>
   );
-};
+});
 
 export { FadeIn };
