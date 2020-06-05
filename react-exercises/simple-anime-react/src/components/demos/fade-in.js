@@ -7,7 +7,12 @@ const FadeInDemo = () => {
       <div>
         <h3>
           This demo page show case the{' '}
-          <FadeIn duration={2000} delay={2000} isInfiniteAnimation={true}>
+          <FadeIn
+            duration={5000}
+            delay={2000}
+            isInfiniteAnimation={true}
+            easingStyle={'linear'}
+          >
             fade in
           </FadeIn>{' '}
           effect.
