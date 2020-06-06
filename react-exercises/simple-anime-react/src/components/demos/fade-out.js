@@ -1,6 +1,6 @@
 import React from 'react';
 import { FadeOut } from '../simple-anime-lib';
-import DemoPic from './demo-pic.jpg';
+import DemoPic from '../../assets/images/demo-pic.jpg';
 const FadeOutDemo = () => {
   return (
     <div className="demo-content">
