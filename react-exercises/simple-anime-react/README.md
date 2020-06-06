@@ -19,3 +19,71 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 # Restrictions
 - You can use any lib for easing effects. 
 - No other library
+
+# Documentation 🧾
+## Bounce
+### Usage
+```html
+ <Bounce duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'bounce'}    dropHeight={-40}> your content here </Bounce>
+ ```
+ ### API Details
+| Property    | Required  |   Type    |   Default |   Description   |
+| ----------- | ----------- | --------- | -------- |--------- |
+| duration    | optional  | number    | 2000     |   duration of animation in ms
+| delay       | optional  | number    | 1000     |   delay before the animation in ms
+| isInfiniteAnimation|optional|boolean| false    |   should the animation run infinitely
+| easingStyle | optional  | string    | bounce   |   easing effect for the animation
+| dropHeight  | optional  | number    | -20     |   maximum height for the animation effect
+
+## FadeIn
+### Usage
+```html
+ <FadeIn duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'linear'} > your content here </FadeIn>
+ ```
+ ### API Details
+| Property    | Required  |   Type    |   Default |   Description   |
+| ----------- | ----------- | --------- | -------- |--------- |
+| duration    | optional  | number    | 2000     |   duration of animation in ms
+| delay       | optional  | number    | 1000     |   delay before the animation in ms
+| isInfiniteAnimation|optional|boolean| false    |   should the animation run infinitely
+| easingStyle | optional  | string    | linear   |   easing effect for the animation
+
+## FadeOut
+### Usage
+```html
+ <FadeOut duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'linear'}> your content here </FadeOut>
+ ```
+ ### API Details
+| Property    | Required  |   Type    |   Default |   Description   |
+| ----------- | ----------- | --------- | -------- |--------- |
+| duration    | optional  | number    | 2000     |   duration of animation in ms
+| delay       | optional  | number    | 1000     |   delay before the animation in ms
+| isInfiniteAnimation|optional|boolean| false    |   should the animation run infinitely
+| easingStyle | optional  | string    | linear   |   easing effect for the animation
+
+## Pulse
+### Usage
+```html
+ <Pulse duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'linear'} > your content here </Pulse>
+ ```
+ ### API Details
+| Property    | Required  |   Type    |   Default |   Description   |
+| ----------- | ----------- | --------- | -------- |--------- |
+| duration    | optional  | number    | 2000     |   duration of animation in ms
+| delay       | optional  | number    | 1000     |   delay before the animation in ms
+| isInfiniteAnimation|optional|boolean| false    |   should the animation run infinitely
+| easingStyle | optional  | string    | linear   |   easing effect for the animation
+
+## SlideUpDown
+### Usage
+```html
+ <SlideUpDown duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'linear'}    dropHeight={-40}> your content here </SlideUpDown>
+ ```
+ ### API Details
+| Property    | Required  |   Type    |   Default |   Description   |
+| ----------- | ----------- | --------- | -------- |--------- |
+| duration    | optional  | number    | 2000     |   duration of animation in ms
+| delay       | optional  | number    | 1000     |   delay before the animation in ms
+| isInfiniteAnimation|optional|boolean| false    |   should the animation run infinitely
+| easingStyle | optional  | string    | linear   |   easing effect for the animation
+| dropHeight  | optional  | number    | -20     |   maximum height for the animation effect
