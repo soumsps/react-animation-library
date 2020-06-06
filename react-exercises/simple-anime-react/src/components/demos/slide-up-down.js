@@ -1,6 +1,6 @@
 import React from 'react';
 import { SlideUpDown } from '../simple-anime-lib';
-import DemoPic from './demo-pic.jpg';
+import airBaloon from '../../assets/images/air-balloon.png';
 const SlideUpDownDemo = () => {
   return (
     <div className="demo-content">
@@ -19,7 +19,7 @@ const SlideUpDownDemo = () => {
           </SlideUpDown>{' '}
           effect.
         </h3>
-        <p>
+        <p className="padding-bottom-10">
           Simple animation library that have the following things. - Bounce - FadeIn and
           Out with easing effects - Slide up to limit and come back to original location -
           Pulse
@@ -29,14 +29,13 @@ const SlideUpDownDemo = () => {
           delay={2000}
           isInfiniteAnimation={true}
           easingStyle={'linear'}
-          dropHeight={-30}
+          dropHeight={-50}
 
         >
-          <img src={DemoPic} alt="effect demo"></img>
+          <img src={airBaloon} alt="effect demo"></img>
         </SlideUpDown>
       </div>
     </div>
   );
 };
-
 export default SlideUpDownDemo;
