@@ -26,7 +26,6 @@ const Bounce = memo((props) => {
   let timing = timingFunction[DEFAULT_BOUNCE_CONFIG.easingStyle];
 
   const draw = (progress) => {
-    console.log('drawing');
     if (elementRef.current !== null) {
       if (progress < 0.2) {
         elementRef.current.style.top = maxHeight * (1 / 0.2) * progress + 'px';
