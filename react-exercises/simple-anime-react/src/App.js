@@ -17,8 +17,10 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <h2  onClick={() => navigate('/')}>Simple Animation library</h2>
+      <div className="page-header">
+        <h2 onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          Simple Animation library
+        </h2>
         <label htmlFor="effects">Effect: </label>
         <select
           data-testid="effect-selector"
