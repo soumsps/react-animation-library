@@ -9,25 +9,26 @@ const PulseDemo = () => {
           This demo page show case the{' '}
           <Pulse
             duration={1000}
-            delay={2000}
+            delay={1000}
             isInfiniteAnimation={true}
             easingStyle={'linear'}
-            scale={1.9}
+            scale={1.5}
           >
             pulse
           </Pulse>{' '}
           effect.
         </h3>
         <p>
-          Simple animation library that have the following things. - Bounce - FadeIn and
-          Out with easing effects - Slide up to limit and come back to original location -
-          Pulse
+          Simple animation library that have the following things. - Bounce -
+          FadeIn and Out with easing effects - Slide up to limit and come back
+          to original location - Pulse
         </p>
         <Pulse
-          duration={2000}
+          duration={1000}
           delay={2000}
           isInfiniteAnimation={true}
           easingStyle={'linear'}
+          scale={1.3}
         >
           <img src={heartPic} alt="effect demo"></img>
         </Pulse>
