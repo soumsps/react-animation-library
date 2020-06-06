@@ -1,27 +1,38 @@
-import React from "react";
+import React, { useRef, memo } from 'react';
+import { useAnimationFrame, timingFunction } from './helper';
+import {
+  DEFAULT_DELAY,
+  DEFAULT_DURATION,
+  DEFAULT_IS_INFINITE_ANIMATION,
+  DEFAULT_EASE_STYLE,
+} from './constants';
 
-const FadeIn = ({ children, duration = 5000}) => {
-  const [opacity, setOpacity] = React.useState(0.0);
-// to differentiate between first and the rest.
-  let startTime = -1.0;
-  const requestRef = React.useRef();
-  const previousTimeRef = React.useRef();
-  const animate = (time) => {
-    if (previousTimeRef.current != undefined) {
-      if (startTime < 0) {
-        startTime = new Date().getTime();
-        setOpacity(0.0 / duration);
-      } else if (time <= duration) {
-        setOpacity(time / duration); 
-      }
+const FadeIn = memo((props) => {
+  const delay = props.delay ? Number(props.delay) : DEFAULT_DELAY;
+  const duration = props.duration ? Number(props.duration) : DEFAULT_DURATION;
+  const isInfiniteAnimation = props.isInfiniteAnimation
+    ? props.isInfiniteAnimation
+    : DEFAULT_IS_INFINITE_ANIMATION;
+  const easingStyle = props.easingStyle ? props.easingStyle : DEFAULT_EASE_STYLE;
+
+  const elementRef = useRef({ style: { opacity: 0.0 } });
+  let timing = timingFunction[DEFAULT_EASE_STYLE];
+
+  const draw = (progress) => {
+    console.log('drawing');
+    if (elementRef.current !== null) {
+      elementRef.current.style.opacity = progress;
     }
-    previousTimeRef.current = time;
-    requestRef.current = requestAnimationFrame(animate);
   };
-  React.useEffect(() => {
-    requestRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(requestRef.current);
-  }, []); // to make sure request animation only runs once at first
-  return <span style={{ opacity: opacity }}>{children}</span>;
-};
+  if (timingFunction[easingStyle]) {
+    timing = timingFunction[easingStyle];
+  }
+  useAnimationFrame({ delay, duration, timing, draw, isInfiniteAnimation });
+  return (
+    <span ref={elementRef} style={elementRef.current.style}>
+      {props.children}
+    </span>
+  );
+});
+
 export { FadeIn };
