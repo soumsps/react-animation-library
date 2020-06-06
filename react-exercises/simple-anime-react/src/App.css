@@ -7,5 +7,9 @@
 }
 
 .padding-bottom-10 {
-padding-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.page-header {
+  margin-bottom: 80px;
 }

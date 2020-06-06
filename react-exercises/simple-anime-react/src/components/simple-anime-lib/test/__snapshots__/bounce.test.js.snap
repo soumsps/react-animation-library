@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bounce effect snapshot test 1`] = `
+<span
+  style={
+    Object {
+      "position": "relative",
+      "top": "0px",
+    }
+  }
+/>
+`;
