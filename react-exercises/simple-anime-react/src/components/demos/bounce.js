@@ -1,5 +1,5 @@
 import React from 'react';
-import DemoPic from './demo-pic.jpg';
+import Basketball from '../../assets/images/basketball.png';
 import { Bounce } from '../simple-anime-lib';
 const BounceDemo = () => {
   return (
@@ -18,7 +18,7 @@ const BounceDemo = () => {
           </Bounce>
           effect.
         </h3>
-        <p>
+        <p className="padding-bottom-10">
           Simple animation library that have the following things. - Bounce - FadeIn and
           Out with easing effects - Slide up to limit and come back to original location -
           Pulse
@@ -28,8 +28,9 @@ const BounceDemo = () => {
           delay={2000}
           isInfiniteAnimation={true}
           easingStyle={'bounce'}
+          dropHeight={-40}
         >
-          <img src={DemoPic} alt="effect demo"></img>
+          <img src={Basketball} alt="effect demo"></img>
         </Bounce>
       </div>
     </div>
