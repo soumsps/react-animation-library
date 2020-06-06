@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <h2>Simple Animation library</h2>
+        <h2  onClick={() => navigate('/')}>Simple Animation library</h2>
         <label htmlFor="effects">Effect: </label>
         <select
           data-testid="effect-selector"
