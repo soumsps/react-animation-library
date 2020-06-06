@@ -24,7 +24,7 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 ## Bounce
 ### Usage
 ```html
- <Bounce duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'bounce'}    dropHeight={-40}> your content here </Bounce>
+ <Bounce duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'bounce'}    maxHeight={-40}> your content here </Bounce>
  ```
  ### API Details
 | Property    | Required  |   Type    |   Default |   Description   |
@@ -33,7 +33,7 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 | delay       | optional  | number    | 1000     |   delay before the animation in ms
 | isInfiniteAnimation|optional|boolean| false    |   should the animation run infinitely
 | easingStyle | optional  | string    | bounce   |   easing effect for the animation
-| dropHeight  | optional  | number    | -20     |   maximum height for the animation effect
+| maxHeight  | optional  | number    | -20     |   maximum height for the animation effect
 
 ## FadeIn
 ### Usage
@@ -77,7 +77,7 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 ## SlideUpDown
 ### Usage
 ```html
- <SlideUpDown duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'linear'}    dropHeight={-40}> your content here </SlideUpDown>
+ <SlideUpDown duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'linear'}    maxHeight={-40}> your content here </SlideUpDown>
  ```
  ### API Details
 | Property    | Required  |   Type    |   Default |   Description   |
@@ -86,4 +86,4 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 | delay       | optional  | number    | 1000     |   delay before the animation in ms
 | isInfiniteAnimation|optional|boolean| false    |   should the animation run infinitely
 | easingStyle | optional  | string    | linear   |   easing effect for the animation
-| dropHeight  | optional  | number    | -20     |   maximum height for the animation effect
+| maxHeight  | optional  | number    | -20     |   maximum height for the animation effect

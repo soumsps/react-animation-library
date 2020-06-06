@@ -15,7 +15,7 @@ const SlideUpDown = memo((props) => {
   const easingStyle = props.easingStyle
     ? props.easingStyle
     : DEFAULT_SLIDEUP_CONFIG.easingStyle;
-  const dropHeight = props.dropHeight ? Number(props.dropHeight) : -20;
+  const maxHeight = props.maxHeight ? Number(props.maxHeight) : DEFAULT_SLIDEUP_CONFIG.maxHeight;
 
   const elementRef = useRef({
     style: { position: 'relative', top: `0px` },
@@ -26,10 +26,10 @@ const SlideUpDown = memo((props) => {
   const draw = (progress) => {
     if (elementRef.current !== null) {
       if (progress < 0.5) {
-        const up = dropHeight * (1 / 0.5) * progress;
+        const up = maxHeight * (1 / 0.5) * progress;
         elementRef.current.style.top = up + 'px';
       } else {
-        const d = dropHeight * ((1 / 0.5) * (1 - progress));
+        const d = maxHeight * ((1 / 0.5) * (1 - progress));
         elementRef.current.style.top = d + 'px';
       }
     }

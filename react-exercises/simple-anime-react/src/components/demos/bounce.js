@@ -12,7 +12,7 @@ const BounceDemo = () => {
             delay={2000}
             isInfiniteAnimation={true}
             easingStyle={'bounce'}
-            dropHeight={-40}
+            maxHeight={-40}
           >
             bounce{' '}
           </Bounce>
@@ -28,7 +28,7 @@ const BounceDemo = () => {
           delay={1000}
           isInfiniteAnimation={true}
           easingStyle={'bounce'}
-          dropHeight={-70}
+          maxHeight={-70}
         >
           <img
             src={Basketball}

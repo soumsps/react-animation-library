@@ -14,7 +14,7 @@ const SlideUpDownDemo = () => {
             isInfiniteAnimation={true}
             easingStyle={'linear'}
             scale={1.9}
-            dropHeight={-30}
+            maxHeight={-30}
           >
             slide up and down
           </SlideUpDown>{' '}
@@ -30,7 +30,7 @@ const SlideUpDownDemo = () => {
           delay={2000}
           isInfiniteAnimation={false}
           easingStyle={'linear'}
-          dropHeight={-150}
+          maxHeight={-150}
         >
           <img src={airBaloon} alt="effect demo"></img>
         </SlideUpDown>
