@@ -24,7 +24,7 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 ## Bounce
 ### Usage
 ```html
- <Bounce duration={1000} delay={2000} isInfiniteAnimation={true} easingStyle={'bounce'}    maxHeight={-40}> your content here </Bounce>
+ <Bounce duration={1000} delay={2000} isInfiniteAnimation={true}  maxHeight={-40}> your content here </Bounce>
  ```
  ### API Details
 | Property    | Required  |   Type    |   Default |   Description   |
@@ -32,7 +32,6 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 | duration    | optional  | number    | 2000     |   duration of animation in ms
 | delay       | optional  | number    | 1000     |   delay before the animation in ms
 | isInfiniteAnimation|optional|boolean| false    |   should the animation run infinitely
-| easingStyle | optional  | string    | bounce   |   easing effect for the animation
 | maxHeight  | optional  | number    | -20     |   maximum height for the animation effect
 
 ## FadeIn
