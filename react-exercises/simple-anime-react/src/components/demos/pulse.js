@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pulse } from '../simple-anime-lib';
-import DemoPic from './demo-pic.jpg';
+import heartPic from '../../assets/images/heart.png';
 const PulseDemo = () => {
   return (
     <div className="demo-content">
@@ -29,7 +29,7 @@ const PulseDemo = () => {
           isInfiniteAnimation={true}
           easingStyle={'linear'}
         >
-          <img src={DemoPic} alt="effect demo"></img>
+          <img src={heartPic} alt="effect demo"></img>
         </Pulse>
       </div>
     </div>
