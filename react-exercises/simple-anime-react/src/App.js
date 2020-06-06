@@ -21,6 +21,7 @@ function App() {
         <h2>Simple Animation library</h2>
         <label htmlFor="effects">Effect: </label>
         <select
+          data-testid="effect-selector"
           name="effects"
           onChange={(event) => handelEffectSelectionDropdown(event)}
           defaultValue={currentPath}
