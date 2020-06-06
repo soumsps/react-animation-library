@@ -1,6 +1,6 @@
 import React from 'react';
 import { FadeIn } from '../simple-anime-lib';
-import DemoPic from './demo-pic.jpg';
+import batman from '../../assets/images/batman.png';
 const FadeInDemo = () => {
   return (
     <div className="demo-content">
@@ -23,7 +23,7 @@ const FadeInDemo = () => {
           Pulse
         </p>
         <FadeIn duration={5000} delay={1000} isInfiniteAnimation={true}>
-          <img src={DemoPic} alt="effect demo"></img>
+          <img src={batman} alt="effect demo"></img>
         </FadeIn>
       </div>
     </div>
