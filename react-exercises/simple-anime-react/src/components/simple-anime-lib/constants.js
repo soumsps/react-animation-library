@@ -15,7 +15,7 @@ const DEFAULT_BOUNCE_CONFIG = {
   duration: 2000,
   isInfiniteAnimation: false,
   easingStyle: 'bounce',
-  dropHeight: -20,
+  maxHeight: -20,
 };
 const DEFAULT_PULSE_CONFIG = {
   delay: 1000,
@@ -29,6 +29,7 @@ const DEFAULT_SLIDEUP_CONFIG = {
   duration: 2000,
   isInfiniteAnimation: false,
   easingStyle: 'linear',
+  maxHeight: -20,
 };
 export {
   DEFAULT_FADEIN_CONFIG,

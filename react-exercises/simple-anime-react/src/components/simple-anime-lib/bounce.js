@@ -17,7 +17,7 @@ const Bounce = memo((props) => {
     ? props.easingStyle
     : DEFAULT_BOUNCE_CONFIG.easingStyle;
 
-  const dropHeight = props.dropHeight ? Number(props.dropHeight) : -20;
+  const maxHeight = props.maxHeight ? Number(props.maxHeight) : -20;
 
   const elementRef = useRef({
     style: { position: 'relative', top: `0px` },
@@ -29,9 +29,9 @@ const Bounce = memo((props) => {
     console.log('drawing');
     if (elementRef.current !== null) {
       if (progress < 0.2) {
-        elementRef.current.style.top = dropHeight * (1 / 0.2) * progress + 'px';
+        elementRef.current.style.top = maxHeight * (1 / 0.2) * progress + 'px';
       } else {
-        elementRef.current.style.top = dropHeight * (1 - progress) + 'px';
+        elementRef.current.style.top = maxHeight * (1 - progress) + 'px';
       }
     }
   };
