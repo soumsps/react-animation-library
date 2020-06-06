@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fade-in effect snapshot test 1`] = `
+<span
+  style={
+    Object {
+      "opacity": 0,
+    }
+  }
+/>
+`;
