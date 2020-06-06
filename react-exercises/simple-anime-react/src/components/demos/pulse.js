@@ -2,31 +2,38 @@ import React from 'react';
 import { Pulse } from '../simple-anime-lib';
 import DemoPic from './demo-pic.jpg';
 const PulseDemo = () => {
-   
   return (
-  <div className="demo-content">
-  <h1>Pulse</h1>
-  <p>This pulse effect adds the pulse animation effect to the element</p>
-  <h3>Usage</h3>
-  <h3>Examples</h3>
+    <div className="demo-content">
       <div>
         <h3>
-          This demo page showcases the 
+          This demo page show case the{' '}
           <Pulse
-            duration={5000}
+            duration={1000}
             delay={2000}
-            isInfiniteAnimation={false}
+            isInfiniteAnimation={true}
             easingStyle={'linear'}
-            >
+            scale={1.9}
+          >
             pulse
-          </Pulse>
+          </Pulse>{' '}
           effect.
         </h3>
-        <Pulse duration={1000} delay={1000} isInfiniteAnimation={false} easingStyle={'linear'}>
+        <p>
+          Simple animation library that have the following things. - Bounce - FadeIn and
+          Out with easing effects - Slide up to limit and come back to original location -
+          Pulse
+        </p>
+        <Pulse
+          duration={2000}
+          delay={2000}
+          isInfiniteAnimation={true}
+          easingStyle={'linear'}
+        >
           <img src={DemoPic} alt="effect demo"></img>
         </Pulse>
       </div>
-      </div>
-)};
+    </div>
+  );
+};
 
 export default PulseDemo;
