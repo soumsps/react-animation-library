@@ -14,7 +14,6 @@ const FadeIn = memo((props) => {
   let timing = timingFunction[DEFAULT_FADEIN_CONFIG.easingStyle];
 
   const draw = (progress) => {
-    console.log('drawing');
     if (elementRef.current !== null) {
       elementRef.current.style.opacity = progress;
     }
