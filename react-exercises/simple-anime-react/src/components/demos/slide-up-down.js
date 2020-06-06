@@ -13,6 +13,7 @@ const SlideUpDownDemo = () => {
             isInfiniteAnimation={true}
             easingStyle={'linear'}
             scale={1.9}
+            dropHeight={-30}
           >
             slide up and down
           </SlideUpDown>{' '}
@@ -28,6 +29,8 @@ const SlideUpDownDemo = () => {
           delay={2000}
           isInfiniteAnimation={true}
           easingStyle={'linear'}
+          dropHeight={-30}
+
         >
           <img src={DemoPic} alt="effect demo"></img>
         </SlideUpDown>
