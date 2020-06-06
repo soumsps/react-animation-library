@@ -1,26 +1,29 @@
 import React, { useRef, memo } from 'react';
 import { useAnimationFrame, timingFunction } from './helper';
-import {
-  DEFAULT_DELAY,
-  DEFAULT_DURATION,
-  DEFAULT_IS_INFINITE_ANIMATION,
-  DEFAULT_EASE_STYLE,
-} from './constants';
+import { DEFAULT_BOUNCE_CONFIG } from './constants';
 
 const Bounce = memo((props) => {
-  const delay = props.delay ? Number(props.delay) : DEFAULT_DELAY;
-  const duration = props.duration ? Number(props.duration) : DEFAULT_DURATION;
+  const delay = props.delay ? Number(props.delay) : DEFAULT_BOUNCE_CONFIG.delay;
+
+  const duration = props.duration
+    ? Number(props.duration)
+    : DEFAULT_BOUNCE_CONFIG.duration;
+
   const isInfiniteAnimation = props.isInfiniteAnimation
     ? props.isInfiniteAnimation
-    : DEFAULT_IS_INFINITE_ANIMATION;
-  const easingStyle = props.easingStyle ? props.easingStyle : DEFAULT_EASE_STYLE;
+    : DEFAULT_BOUNCE_CONFIG.isInfiniteAnimation;
+
+  const easingStyle = props.easingStyle
+    ? props.easingStyle
+    : DEFAULT_BOUNCE_CONFIG.easingStyle;
+
   const dropHeight = props.dropHeight ? Number(props.dropHeight) : -20;
 
   const elementRef = useRef({
     style: { position: 'relative', top: `0px` },
   });
 
-  let timing = timingFunction[DEFAULT_EASE_STYLE];
+  let timing = timingFunction[DEFAULT_BOUNCE_CONFIG.easingStyle];
 
   const draw = (progress) => {
     console.log('drawing');
