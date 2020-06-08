@@ -13,28 +13,32 @@ const Pulse = memo((props) => {
     ? props.isInfiniteAnimation
     : DEFAULT_PULSE_CONFIG.isInfiniteAnimation;
 
-  const easingStyle = props.easingStyle
-    ? props.easingStyle
-    : DEFAULT_PULSE_CONFIG.easingStyle;
+  const easing = props.easing ? props.easing : DEFAULT_PULSE_CONFIG.easing;
 
-  const scale = props.scale ? Math.abs(Number(props.scale)) : DEFAULT_PULSE_CONFIG.scale;
+  const scale = props.scale
+    ? Math.abs(Number(props.scale))
+    : DEFAULT_PULSE_CONFIG.scale;
 
   const elementRef = useRef({ style: { transform: 'scale(1,1)' } });
-  let timing = timingFunction[DEFAULT_PULSE_CONFIG.easingStyle];
+  let timing = timingFunction[DEFAULT_PULSE_CONFIG.easing];
 
   const draw = (progress) => {
     if (elementRef.current != null) {
       if (progress < 0.5) {
         const incFactor = progress * ((scale - 1) / 0.5);
-        elementRef.current.style.transform = `scale(${1 + incFactor},${1 + incFactor})`;
+        elementRef.current.style.transform = `scale(${1 + incFactor},${
+          1 + incFactor
+        })`;
       } else if (progress > 0.5) {
         const decFactor = (1 - progress) * ((scale - 1) / 0.5);
-        elementRef.current.style.transform = `scale(${1 + decFactor},${1 + decFactor})`;
+        elementRef.current.style.transform = `scale(${1 + decFactor},${
+          1 + decFactor
+        })`;
       }
     }
   };
-  if (timingFunction[easingStyle]) {
-    timing = timingFunction[easingStyle];
+  if (timingFunction[easing]) {
+    timing = timingFunction[easing];
   }
   useAnimationFrame({ delay, duration, timing, draw, isInfiniteAnimation });
   return (

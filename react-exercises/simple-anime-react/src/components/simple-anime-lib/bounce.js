@@ -13,9 +13,7 @@ const Bounce = memo((props) => {
     ? props.isInfiniteAnimation
     : DEFAULT_BOUNCE_CONFIG.isInfiniteAnimation;
 
-  const easingStyle = props.easingStyle
-    ? props.easingStyle
-    : DEFAULT_BOUNCE_CONFIG.easingStyle;
+  const easing = props.easing ? props.easing : DEFAULT_BOUNCE_CONFIG.easing;
 
   const maxHeight = props.maxHeight ? Number(props.maxHeight) : -20;
 
@@ -23,7 +21,7 @@ const Bounce = memo((props) => {
     style: { position: 'relative', top: `0px` },
   });
 
-  let timing = timingFunction[DEFAULT_BOUNCE_CONFIG.easingStyle];
+  let timing = timingFunction[DEFAULT_BOUNCE_CONFIG.easing];
 
   const draw = (progress) => {
     if (elementRef.current !== null) {
@@ -35,8 +33,8 @@ const Bounce = memo((props) => {
     }
   };
 
-  if (timingFunction[easingStyle]) {
-    timing = timingFunction[easingStyle];
+  if (timingFunction[easing]) {
+    timing = timingFunction[easing];
   }
   useAnimationFrame({ delay, duration, timing, draw, isInfiniteAnimation });
   return (

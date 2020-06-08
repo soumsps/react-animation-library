@@ -11,7 +11,7 @@ const BounceDemo = () => {
             duration={1000}
             delay={2000}
             isInfiniteAnimation={true}
-            easingStyle={'bounce'}
+            easing={'bounce'}
             maxHeight={-40}
           >
             bounce{' '}
@@ -27,7 +27,7 @@ const BounceDemo = () => {
           duration={3000}
           delay={1000}
           isInfiniteAnimation={true}
-          easingStyle={'bounce'}
+          easing={'bounce'}
           maxHeight={-70}
         >
           <img

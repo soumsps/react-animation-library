@@ -12,16 +12,16 @@ const SlideUpDown = memo((props) => {
   const isInfiniteAnimation = props.isInfiniteAnimation
     ? props.isInfiniteAnimation
     : DEFAULT_SLIDEUP_CONFIG.isInfiniteAnimation;
-  const easingStyle = props.easingStyle
-    ? props.easingStyle
-    : DEFAULT_SLIDEUP_CONFIG.easingStyle;
-  const maxHeight = props.maxHeight ? Number(props.maxHeight) : DEFAULT_SLIDEUP_CONFIG.maxHeight;
+  const easing = props.easing ? props.easing : DEFAULT_SLIDEUP_CONFIG.easing;
+  const maxHeight = props.maxHeight
+    ? Number(props.maxHeight)
+    : DEFAULT_SLIDEUP_CONFIG.maxHeight;
 
   const elementRef = useRef({
     style: { position: 'relative', top: `0px` },
   });
 
-  let timing = timingFunction[DEFAULT_SLIDEUP_CONFIG.easingStyle];
+  let timing = timingFunction[DEFAULT_SLIDEUP_CONFIG.easing];
 
   const draw = (progress) => {
     if (elementRef.current !== null) {
@@ -35,8 +35,8 @@ const SlideUpDown = memo((props) => {
     }
   };
 
-  if (timingFunction[easingStyle]) {
-    timing = timingFunction[easingStyle];
+  if (timingFunction[easing]) {
+    timing = timingFunction[easing];
   }
   useAnimationFrame({ delay, duration, timing, draw, isInfiniteAnimation });
   return (

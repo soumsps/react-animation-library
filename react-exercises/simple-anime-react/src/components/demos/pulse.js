@@ -11,7 +11,7 @@ const PulseDemo = () => {
             duration={1000}
             delay={1000}
             isInfiniteAnimation={true}
-            easingStyle={'linear'}
+            easing={'linear'}
             scale={1.5}
           >
             pulse
@@ -27,7 +27,7 @@ const PulseDemo = () => {
           duration={1000}
           delay={2000}
           isInfiniteAnimation={true}
-          easingStyle={'linear'}
+          easing={'linear'}
           scale={1.3}
         >
           <img src={heartPic} alt="effect demo"></img>
