@@ -13,18 +13,14 @@ const useAnimationFrame = ({
     var start = performance.now();
     rafRef.current = requestAnimationFrame(function animate(time) {
       var timeFraction = (time - start) / duration;
-      if (timeFraction > 1) {
-        if (iterationCountRef.current > 0) {
-          console.log('animation restarted: ', iterationCountRef.current);
+      if (timeFraction >= 1) {
+        if (iterationCountRef.current) {
           start = time;
           timeFraction = 0.0;
           iterationCountRef.current -= 1;
-        } else {
-          timeFraction = 1;
-          console.log('animation ended: ', iterationCountRef.current);
         }
       }
-      var progress = timing(timeFraction);
+      const progress = timing(timeFraction);
       draw(progress);
       if (timeFraction < 1) {
         rafRef.current = requestAnimationFrame(animate);
@@ -37,7 +33,10 @@ const useAnimationFrame = ({
       () => animate({ duration, timing, draw, iterationCount }),
       delay
     );
-    return () => cancelAnimationFrame(rafRef.current);
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      console.log('clean');
+    };
   }, [animate, delay, duration, timing, draw, iterationCount]);
 };
 
