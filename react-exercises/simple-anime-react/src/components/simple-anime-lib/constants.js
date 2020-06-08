@@ -15,7 +15,7 @@ const DEFAULT_BOUNCE_CONFIG = {
   duration: 2000,
   isInfiniteAnimation: false,
   easing: 'bounce',
-  maxHeight: -20,
+  dropHeight: -20,
 };
 const DEFAULT_PULSE_CONFIG = {
   delay: 1000,
