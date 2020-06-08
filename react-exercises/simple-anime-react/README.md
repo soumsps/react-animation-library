@@ -29,84 +29,84 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 ### Usage
 
 ```html
- <Bounce duration={1000} delay={2000} isInfiniteAnimation={true} easing={'bounce'}    dropHeight={-40}> your content here </Bounce>
+ <Bounce duration={1000} delay={2000} iterationCount={true} easing={'bounce'}    dropHeight={-40}> your content here </Bounce>
 ```
 
 ### API Details
 
-| Property            | Required | Type    | Default | Description                             |
-| ------------------- | -------- | ------- | ------- | --------------------------------------- |
-| duration            | optional | number  | 2000    | duration of animation in ms             |
-| delay               | optional | number  | 1000    | delay before the animation in ms        |
-| isInfiniteAnimation | optional | boolean | false   | should the animation run infinitely     |
-| easing              | optional | string  | bounce  | easing effect for the animation         |
-| dropHeight          | optional | number  | -20px   | maximum height for the animation effect |
+| Property       | Required | Type    | Default | Description                               |
+| -------------- | -------- | ------- | ------- | ----------------------------------------- |
+| duration       | optional | number  | 2000    | duration of animation in ms               |
+| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
+| easing         | optional | string  | bounce  | easing effect for the animation           |
+| dropHeight     | optional | number  | -20px   | maximum height for the animation effect   |
 
 ## FadeIn
 
 ### Usage
 
 ```html
- <FadeIn duration={1000} delay={2000} isInfiniteAnimation={true} easing={'linear'} > your content here </FadeIn>
+ <FadeIn duration={1000} delay={2000} iterationCount={true} easing={'linear'} > your content here </FadeIn>
 ```
 
 ### API Details
 
-| Property            | Required | Type    | Default | Description                         |
-| ------------------- | -------- | ------- | ------- | ----------------------------------- |
-| duration            | optional | number  | 2000    | duration of animation in ms         |
-| delay               | optional | number  | 1000    | delay before the animation in ms    |
-| isInfiniteAnimation | optional | boolean | false   | should the animation run infinitely |
-| easing              | optional | string  | linear  | easing effect for the animation     |
+| Property       | Required | Type    | Default | Description                               |
+| -------------- | -------- | ------- | ------- | ----------------------------------------- |
+| duration       | optional | number  | 2000    | duration of animation in ms               |
+| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
+| easing         | optional | string  | linear  | easing effect for the animation           |
 
 ## FadeOut
 
 ### Usage
 
 ```html
- <FadeOut duration={1000} delay={2000} isInfiniteAnimation={true} easing={'linear'}> your content here </FadeOut>
+ <FadeOut duration={1000} delay={2000} iterationCount={true} easing={'linear'}> your content here </FadeOut>
 ```
 
 ### API Details
 
-| Property            | Required | Type    | Default | Description                         |
-| ------------------- | -------- | ------- | ------- | ----------------------------------- |
-| duration            | optional | number  | 2000    | duration of animation in ms         |
-| delay               | optional | number  | 1000    | delay before the animation in ms    |
-| isInfiniteAnimation | optional | boolean | false   | should the animation run infinitely |
-| easing              | optional | string  | linear  | easing effect for the animation     |
+| Property       | Required | Type    | Default | Description                               |
+| -------------- | -------- | ------- | ------- | ----------------------------------------- |
+| duration       | optional | number  | 2000    | duration of animation in ms               |
+| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
+| easing         | optional | string  | linear  | easing effect for the animation           |
 
 ## Pulse
 
 ### Usage
 
 ```html
- <Pulse duration={1000} delay={2000} isInfiniteAnimation={true} easing={'linear'} > your content here </Pulse>
+ <Pulse duration={1000} delay={2000} iterationCount={true} easing={'linear'} > your content here </Pulse>
 ```
 
 ### API Details
 
-| Property            | Required | Type    | Default | Description                         |
-| ------------------- | -------- | ------- | ------- | ----------------------------------- |
-| duration            | optional | number  | 2000    | duration of animation in ms         |
-| delay               | optional | number  | 1000    | delay before the animation in ms    |
-| isInfiniteAnimation | optional | boolean | false   | should the animation run infinitely |
-| easing              | optional | string  | linear  | easing effect for the animation     |
+| Property       | Required | Type    | Default | Description                               |
+| -------------- | -------- | ------- | ------- | ----------------------------------------- |
+| duration       | optional | number  | 2000    | duration of animation in ms               |
+| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
+| easing         | optional | string  | linear  | easing effect for the animation           |
 
 ## SlideUpDown
 
 ### Usage
 
 ```html
- <SlideUpDown duration={1000} delay={2000} isInfiniteAnimation={true} easing={'linear'}    maxHeight={-40}> your content here </SlideUpDown>
+ <SlideUpDown duration={1000} delay={2000} iterationCount={true} easing={'linear'}    maxHeight={-40}> your content here </SlideUpDown>
 ```
 
 ### API Details
 
-| Property            | Required | Type    | Default | Description                             |
-| ------------------- | -------- | ------- | ------- | --------------------------------------- |
-| duration            | optional | number  | 2000    | duration of animation in ms             |
-| delay               | optional | number  | 1000    | delay before the animation in ms        |
-| isInfiniteAnimation | optional | boolean | false   | should the animation run infinitely     |
-| easing              | optional | string  | linear  | easing effect for the animation         |
-| maxHeight           | optional | number  | -20px   | maximum height for the animation effect |
+| Property       | Required | Type    | Default | Description                               |
+| -------------- | -------- | ------- | ------- | ----------------------------------------- |
+| duration       | optional | number  | 2000    | duration of animation in ms               |
+| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
+| easing         | optional | string  | linear  | easing effect for the animation           |
+| maxHeight      | optional | number  | -20px   | maximum height for the animation effect   |
