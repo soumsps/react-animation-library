@@ -10,7 +10,7 @@ const BounceDemo = () => {
           <Bounce
             duration={1000}
             delay={2000}
-            isInfiniteAnimation={true}
+            iterationCount={Infinity}
             easing={'bounce'}
             dropHeight={-40}
           >
@@ -26,7 +26,7 @@ const BounceDemo = () => {
         <Bounce
           duration={3000}
           delay={1000}
-          isInfiniteAnimation={true}
+          iterationCount={3}
           easing={'bounce'}
           dropHeight={-70}
         >

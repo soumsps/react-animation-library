@@ -10,7 +10,7 @@ const FadeInDemo = () => {
           <FadeIn
             duration={5000}
             delay={2000}
-            isInfiniteAnimation={true}
+            iterationCount={1}
             easing={'linear'}
           >
             fade in
@@ -22,7 +22,7 @@ const FadeInDemo = () => {
           FadeIn and Out with easing effects - Slide up to limit and come back
           to original location - Pulse
         </p>
-        <FadeIn duration={5000} delay={1000} isInfiniteAnimation={true}>
+        <FadeIn duration={5000} delay={1000} iterationCount={1}>
           <img src={batman} alt="effect demo"></img>
         </FadeIn>
       </div>

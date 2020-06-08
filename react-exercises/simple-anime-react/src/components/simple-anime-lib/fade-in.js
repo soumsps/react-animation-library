@@ -7,9 +7,9 @@ const FadeIn = memo((props) => {
   const duration = props.duration
     ? Number(props.duration)
     : DEFAULT_FADEIN_CONFIG.duration;
-  const isInfiniteAnimation = props.isInfiniteAnimation
-    ? props.isInfiniteAnimation
-    : DEFAULT_FADEIN_CONFIG.isInfiniteAnimation;
+  const iterationCount = props.iterationCount
+    ? Number(props.iterationCount)
+    : DEFAULT_FADEIN_CONFIG.iterationCount;
   const easing = props.easing ? props.easing : DEFAULT_FADEIN_CONFIG.easing;
 
   const elementRef = useRef({ style: { opacity: 0.0 } });
@@ -23,7 +23,7 @@ const FadeIn = memo((props) => {
   if (timingFunction[easing]) {
     timing = timingFunction[easing];
   }
-  useAnimationFrame({ delay, duration, timing, draw, isInfiniteAnimation });
+  useAnimationFrame({ delay, duration, timing, draw, iterationCount });
   return (
     <span ref={elementRef} style={elementRef.current.style}>
       {props.children}

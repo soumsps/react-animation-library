@@ -9,9 +9,9 @@ const Bounce = memo((props) => {
     ? Number(props.duration)
     : DEFAULT_BOUNCE_CONFIG.duration;
 
-  const isInfiniteAnimation = props.isInfiniteAnimation
-    ? props.isInfiniteAnimation
-    : DEFAULT_BOUNCE_CONFIG.isInfiniteAnimation;
+  const iterationCount = props.iterationCount
+    ? Number(props.iterationCount)
+    : DEFAULT_BOUNCE_CONFIG.iterationCount;
 
   const easing = props.easing ? props.easing : DEFAULT_BOUNCE_CONFIG.easing;
 
@@ -36,7 +36,7 @@ const Bounce = memo((props) => {
   if (timingFunction[easing]) {
     timing = timingFunction[easing];
   }
-  useAnimationFrame({ delay, duration, timing, draw, isInfiniteAnimation });
+  useAnimationFrame({ delay, duration, timing, draw, iterationCount });
   return (
     <span ref={elementRef} style={elementRef.current.style}>
       {props.children}

@@ -9,9 +9,9 @@ const Pulse = memo((props) => {
     ? Number(props.duration)
     : DEFAULT_PULSE_CONFIG.duration;
 
-  const isInfiniteAnimation = props.isInfiniteAnimation
-    ? props.isInfiniteAnimation
-    : DEFAULT_PULSE_CONFIG.isInfiniteAnimation;
+  const iterationCount = props.iterationCount
+    ? Number(props.iterationCount)
+    : DEFAULT_PULSE_CONFIG.iterationCount;
 
   const easing = props.easing ? props.easing : DEFAULT_PULSE_CONFIG.easing;
 
@@ -40,7 +40,7 @@ const Pulse = memo((props) => {
   if (timingFunction[easing]) {
     timing = timingFunction[easing];
   }
-  useAnimationFrame({ delay, duration, timing, draw, isInfiniteAnimation });
+  useAnimationFrame({ delay, duration, timing, draw, iterationCount });
   return (
     <div ref={elementRef} style={elementRef.current.style}>
       {props.children}

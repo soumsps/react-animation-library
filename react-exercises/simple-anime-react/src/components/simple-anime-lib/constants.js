@@ -1,33 +1,33 @@
 const DEFAULT_FADEIN_CONFIG = {
   delay: 1000,
   duration: 2000,
-  isInfiniteAnimation: false,
+  iterationCount: 1,
   easing: 'linear',
 };
 const DEFAULT_FADEOUT_CONFIG = {
   delay: 1000,
   duration: 2000,
-  isInfiniteAnimation: false,
+  iterationCount: 1,
   easing: 'linear',
 };
 const DEFAULT_BOUNCE_CONFIG = {
   delay: 1000,
   duration: 2000,
-  isInfiniteAnimation: false,
+  iterationCount: 1,
   easing: 'bounce',
   dropHeight: -20,
 };
 const DEFAULT_PULSE_CONFIG = {
   delay: 1000,
   duration: 2000,
-  isInfiniteAnimation: false,
+  iterationCount: 1,
   easing: 'linear',
   scale: 1.2,
 };
 const DEFAULT_SLIDEUP_CONFIG = {
   delay: 1000,
   duration: 2000,
-  isInfiniteAnimation: false,
+  iterationCount: 1,
   easing: 'linear',
   maxHeight: -20,
 };

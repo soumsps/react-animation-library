@@ -9,9 +9,9 @@ const SlideUpDown = memo((props) => {
   const duration = props.duration
     ? Number(props.duration)
     : DEFAULT_SLIDEUP_CONFIG.duration;
-  const isInfiniteAnimation = props.isInfiniteAnimation
-    ? props.isInfiniteAnimation
-    : DEFAULT_SLIDEUP_CONFIG.isInfiniteAnimation;
+  const iterationCount = props.iterationCount
+    ? Number(props.iterationCount)
+    : DEFAULT_SLIDEUP_CONFIG.iterationCount;
   const easing = props.easing ? props.easing : DEFAULT_SLIDEUP_CONFIG.easing;
   const maxHeight = props.maxHeight
     ? Number(props.maxHeight)
@@ -38,7 +38,7 @@ const SlideUpDown = memo((props) => {
   if (timingFunction[easing]) {
     timing = timingFunction[easing];
   }
-  useAnimationFrame({ delay, duration, timing, draw, isInfiniteAnimation });
+  useAnimationFrame({ delay, duration, timing, draw, iterationCount });
   return (
     <span ref={elementRef} style={elementRef.current.style}>
       {props.children}
