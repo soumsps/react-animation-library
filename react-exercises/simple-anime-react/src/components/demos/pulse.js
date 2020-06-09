@@ -10,7 +10,7 @@ const PulseDemo = () => {
           <Pulse
             duration={1000}
             delay={1000}
-            iterationCount={2}
+            iterationCount={Infinity}
             easing={'linear'}
             scale={1.5}
           >

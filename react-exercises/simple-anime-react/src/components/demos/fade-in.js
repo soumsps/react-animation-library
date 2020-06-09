@@ -10,7 +10,7 @@ const FadeInDemo = () => {
           <FadeIn
             duration={5000}
             delay={2000}
-            iterationCount={1}
+            iterationCount={Infinity}
             easing={'linear'}
           >
             fade in
