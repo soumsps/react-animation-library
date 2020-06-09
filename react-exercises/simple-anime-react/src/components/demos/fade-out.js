@@ -7,7 +7,7 @@ const FadeOutDemo = () => {
       <div>
         <h3>
           This demo page show case the{' '}
-          <FadeOut duration={5000} iterationCount={2}>
+          <FadeOut duration={5000} iterationCount={Infinity}>
             fade out
           </FadeOut>{' '}
           effect.

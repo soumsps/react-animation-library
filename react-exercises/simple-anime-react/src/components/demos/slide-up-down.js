@@ -11,7 +11,7 @@ const SlideUpDownDemo = () => {
           <SlideUpDown
             duration={1000}
             delay={2000}
-            iterationCount={2}
+            iterationCount={Infinity}
             easing={'linear'}
             scale={1.9}
             maxHeight={-30}
