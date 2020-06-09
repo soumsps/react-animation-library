@@ -7,17 +7,17 @@ const FadeOutDemo = () => {
       <div>
         <h3>
           This demo page show case the{' '}
-          <FadeOut duration={5000} isInfiniteAnimation={true}>
+          <FadeOut duration={5000} iterationCount={2}>
             fade out
           </FadeOut>{' '}
           effect.
         </h3>
         <p>
-          Simple animation library that have the following things. - Bounce - FadeIn and
-          Out with easing effects - Slide up to limit and come back to original location -
-          Pulse
+          Simple animation library that have the following things. - Bounce -
+          FadeIn and Out with easing effects - Slide up to limit and come back
+          to original location - Pulse
         </p>
-        <FadeOut duration={3000} delay={2000} isInfiniteAnimation={true}>
+        <FadeOut duration={3000} delay={2000} iterationCount={2}>
           <img src={DemoPic} alt="effect demo"></img>
         </FadeOut>
       </div>

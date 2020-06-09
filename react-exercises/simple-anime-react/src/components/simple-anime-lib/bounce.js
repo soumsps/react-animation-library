@@ -9,36 +9,34 @@ const Bounce = memo((props) => {
     ? Number(props.duration)
     : DEFAULT_BOUNCE_CONFIG.duration;
 
-  const isInfiniteAnimation = props.isInfiniteAnimation
-    ? props.isInfiniteAnimation
-    : DEFAULT_BOUNCE_CONFIG.isInfiniteAnimation;
+  const iterationCount = props.iterationCount
+    ? Number(props.iterationCount)
+    : DEFAULT_BOUNCE_CONFIG.iterationCount;
 
-  const easingStyle = props.easingStyle
-    ? props.easingStyle
-    : DEFAULT_BOUNCE_CONFIG.easingStyle;
+  const easing = props.easing ? props.easing : DEFAULT_BOUNCE_CONFIG.easing;
 
-  const maxHeight = props.maxHeight ? Number(props.maxHeight) : -20;
+  const dropHeight = props.dropHeight ? Number(props.dropHeight) : -20;
 
   const elementRef = useRef({
     style: { position: 'relative', top: `0px` },
   });
 
-  let timing = timingFunction[DEFAULT_BOUNCE_CONFIG.easingStyle];
+  let timing = timingFunction[DEFAULT_BOUNCE_CONFIG.easing];
 
   const draw = (progress) => {
     if (elementRef.current !== null) {
       if (progress < 0.2) {
-        elementRef.current.style.top = maxHeight * (1 / 0.2) * progress + 'px';
+        elementRef.current.style.top = dropHeight * (1 / 0.2) * progress + 'px';
       } else {
-        elementRef.current.style.top = maxHeight * (1 - progress) + 'px';
+        elementRef.current.style.top = dropHeight * (1 - progress) + 'px';
       }
     }
   };
 
-  if (timingFunction[easingStyle]) {
-    timing = timingFunction[easingStyle];
+  if (timingFunction[easing]) {
+    timing = timingFunction[easing];
   }
-  useAnimationFrame({ delay, duration, timing, draw, isInfiniteAnimation });
+  useAnimationFrame({ delay, duration, timing, draw, iterationCount });
   return (
     <span ref={elementRef} style={elementRef.current.style}>
       {props.children}
