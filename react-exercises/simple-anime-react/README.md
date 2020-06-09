@@ -37,7 +37,7 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 | Property       | Required | Type    | Default | Description                               |
 | -------------- | -------- | ------- | ------- | ----------------------------------------- |
 | duration       | optional | number  | 2000    | duration of animation in ms               |
-| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| delay          | optional | number  | 0       | delay before the animation in ms          |
 | iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
 | easing         | optional | string  | bounce  | easing effect for the animation           |
 | dropHeight     | optional | number  | -20px   | maximum height for the animation effect   |
@@ -55,7 +55,7 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 | Property       | Required | Type    | Default | Description                               |
 | -------------- | -------- | ------- | ------- | ----------------------------------------- |
 | duration       | optional | number  | 2000    | duration of animation in ms               |
-| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| delay          | optional | number  | 0       | delay before the animation in ms          |
 | iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
 | easing         | optional | string  | linear  | easing effect for the animation           |
 
@@ -72,7 +72,7 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 | Property       | Required | Type    | Default | Description                               |
 | -------------- | -------- | ------- | ------- | ----------------------------------------- |
 | duration       | optional | number  | 2000    | duration of animation in ms               |
-| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| delay          | optional | number  | 0       | delay before the animation in ms          |
 | iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
 | easing         | optional | string  | linear  | easing effect for the animation           |
 
@@ -89,7 +89,7 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 | Property       | Required | Type    | Default | Description                               |
 | -------------- | -------- | ------- | ------- | ----------------------------------------- |
 | duration       | optional | number  | 2000    | duration of animation in ms               |
-| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| delay          | optional | number  | 0       | delay before the animation in ms          |
 | iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
 | easing         | optional | string  | linear  | easing effect for the animation           |
 
@@ -106,7 +106,7 @@ You can make your own API names. You can use either CSS to animate, or JavaScrip
 | Property       | Required | Type    | Default | Description                               |
 | -------------- | -------- | ------- | ------- | ----------------------------------------- |
 | duration       | optional | number  | 2000    | duration of animation in ms               |
-| delay          | optional | number  | 1000    | delay before the animation in ms          |
+| delay          | optional | number  | 0       | delay before the animation in ms          |
 | iterationCount | optional | boolean | 1       | use Infinity to show animation infinitely |
 | easing         | optional | string  | linear  | easing effect for the animation           |
 | maxHeight      | optional | number  | -20px   | maximum height for the animation effect   |
