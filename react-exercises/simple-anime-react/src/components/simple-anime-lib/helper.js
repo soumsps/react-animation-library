@@ -10,9 +10,9 @@ const useAnimationFrame = ({
   const rafRef = useRef();
   const iterationCountRef = useRef(iterationCount - 1);
   const animate = useCallback(() => {
-    var start = performance.now();
+    let start = performance.now();
     rafRef.current = requestAnimationFrame(function animate(time) {
-      var timeFraction = (time - start) / duration;
+      let timeFraction = (time - start) / duration;
       if (timeFraction >= 1) {
         if (iterationCountRef.current) {
           start = time;
@@ -62,6 +62,49 @@ const timingFunction = {
   },
 };
 
-// const getConfigs = (userOptions, defaultOptions) => {};
+const getDelay = (userValue, defaultValue) => {
+  const delay = userValue ? Number(userValue) : defaultValue;
+  return delay;
+};
 
-export { useAnimationFrame, timingFunction };
+const getDuration = (userValue, defaultValue) => {
+  const duration = userValue ? Number(userValue) : defaultValue;
+  return duration;
+};
+
+const getIterationCount = (userValue, defaultValue) => {
+  const iterationCount = userValue ? Number(userValue) : defaultValue;
+  return iterationCount;
+};
+
+const getEasing = (userValue, defaultValue) => {
+  const easing = userValue ? userValue : defaultValue;
+  return easing;
+};
+
+const getDropHeight = (userValue, defaultValue) => {
+  const dropHeight = userValue ? Number(userValue) : defaultValue;
+  return dropHeight;
+};
+
+const getMaxHeight = (userValue, defaultValue) => {
+  const maxHeight = userValue ? Number(userValue) : defaultValue;
+  return maxHeight;
+};
+
+const getScale = (userValue, defaultValue) => {
+  const scale = userValue ? Math.abs(Number(userValue)) : defaultValue;
+  return scale;
+};
+
+export {
+  useAnimationFrame,
+  timingFunction,
+  getDelay,
+  getDuration,
+  getDropHeight,
+  getEasing,
+  getIterationCount,
+  getMaxHeight,
+  getScale,
+};

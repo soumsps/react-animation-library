@@ -1,5 +1,5 @@
-export { Bounce } from './bounce';
-export { FadeIn } from './fade-in';
-export { FadeOut } from './fade-out';
-export { Pulse } from './pulse';
-export { SlideUpDown } from './slide-up-down';
+export { Bounce } from './effects/bounce';
+export { FadeIn } from './effects/fade-in';
+export { FadeOut } from './effects/fade-out';
+export { Pulse } from './effects/pulse';
+export { SlideUpDown } from './effects/slide-up-down';
