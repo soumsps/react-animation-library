@@ -8,6 +8,7 @@ import {
   getIterationCount,
   getEasing,
   getDropHeight,
+  getCallback,
 } from '../helper';
 
 const Bounce = memo((props) => {
@@ -18,6 +19,7 @@ const Bounce = memo((props) => {
     DEFAULT_BOUNCE_CONFIG.iterationCount
   );
   const easing = getEasing(props.easing, DEFAULT_BOUNCE_CONFIG.easing);
+  const callback = getCallback(props.callback, DEFAULT_BOUNCE_CONFIG.callback);
   const dropHeight = getDropHeight(
     props.dropHeight,
     DEFAULT_BOUNCE_CONFIG.dropHeight
@@ -38,7 +40,15 @@ const Bounce = memo((props) => {
     }
   };
 
-  useAnimationFrame({ delay, duration, timing, draw, iterationCount });
+  useAnimationFrame({
+    delay,
+    duration,
+    callback,
+    iterationCount,
+    timing,
+    draw,
+  });
+
   return (
     <span ref={elementRef} style={elementRef.current.style}>
       {props.children}

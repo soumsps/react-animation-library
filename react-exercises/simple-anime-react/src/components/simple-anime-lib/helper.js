@@ -6,9 +6,11 @@ const useAnimationFrame = ({
   timing,
   draw,
   iterationCount,
+  callback,
 }) => {
   const rafRef = useRef();
   const iterationCountRef = useRef(iterationCount - 1);
+  const callbackRef = useRef(callback);
   const animate = useCallback(() => {
     let start = performance.now();
     rafRef.current = requestAnimationFrame(function animate(time) {
@@ -18,6 +20,9 @@ const useAnimationFrame = ({
           start = time;
           timeFraction = 0.0;
           iterationCountRef.current -= 1;
+        }
+        if (callbackRef.current) {
+          callbackRef.current();
         }
       }
       const progress = timing(timeFraction);
@@ -97,6 +102,11 @@ const getScale = (userValue, defaultValue) => {
   return scale;
 };
 
+const getCallback = (userCallback, defaultCallback) => {
+  const callback = userCallback ? userCallback : defaultCallback;
+  return callback;
+};
+
 export {
   useAnimationFrame,
   timingFunction,
@@ -107,4 +117,5 @@ export {
   getIterationCount,
   getMaxHeight,
   getScale,
+  getCallback,
 };

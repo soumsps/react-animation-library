@@ -13,6 +13,9 @@ const BounceDemo = () => {
             iterationCount={Infinity}
             easing={'bounce'}
             dropHeight={-40}
+            callback={() => {
+              console.log('bounce text function callback');
+            }}
           >
             bounce{' '}
           </Bounce>
@@ -29,6 +32,9 @@ const BounceDemo = () => {
           iterationCount={3}
           easing={'bounce'}
           dropHeight={-70}
+          callback={() => {
+            console.log('bounce basketball callback');
+          }}
         >
           <img
             src={Basketball}

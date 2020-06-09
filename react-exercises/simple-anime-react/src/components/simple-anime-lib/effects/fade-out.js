@@ -7,6 +7,7 @@ import {
   getDuration,
   getIterationCount,
   getEasing,
+  getCallback,
 } from '../helper';
 
 const FadeOut = memo((props) => {
@@ -17,6 +18,7 @@ const FadeOut = memo((props) => {
     DEFAULT_FADEOUT_CONFIG.iterationCount
   );
   const easing = getEasing(props.easing, DEFAULT_FADEOUT_CONFIG.easing);
+  const callback = getCallback(props.callback, DEFAULT_FADEOUT_CONFIG.callback);
   const timing = timingFunction[easing];
   const elementRef = useRef({ style: { opacity: 1.0 } });
 
@@ -26,7 +28,14 @@ const FadeOut = memo((props) => {
     }
   };
 
-  useAnimationFrame({ delay, duration, timing, draw, iterationCount });
+  useAnimationFrame({
+    delay,
+    duration,
+    callback,
+    iterationCount,
+    timing,
+    draw,
+  });
 
   return (
     <span ref={elementRef} style={elementRef.current.style}>

@@ -12,6 +12,9 @@ const FadeInDemo = () => {
             delay={2000}
             iterationCount={Infinity}
             easing={'linear'}
+            callback={() => {
+              console.log('fadein text');
+            }}
           >
             fade in
           </FadeIn>{' '}
