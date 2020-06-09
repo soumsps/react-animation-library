@@ -22,12 +22,11 @@ const Bounce = memo((props) => {
     props.dropHeight,
     DEFAULT_BOUNCE_CONFIG.dropHeight
   );
+  const timing = timingFunction[easing];
 
   const elementRef = useRef({
     style: { position: 'relative', top: `0px` },
   });
-
-  let timing = timingFunction[DEFAULT_BOUNCE_CONFIG.easing];
 
   const draw = (progress) => {
     if (elementRef.current !== null) {
@@ -39,9 +38,6 @@ const Bounce = memo((props) => {
     }
   };
 
-  if (timingFunction[easing]) {
-    timing = timingFunction[easing];
-  }
   useAnimationFrame({ delay, duration, timing, draw, iterationCount });
   return (
     <span ref={elementRef} style={elementRef.current.style}>

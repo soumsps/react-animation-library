@@ -25,12 +25,10 @@ const SlideUpDown = memo((props) => {
     props.maxHeight,
     DEFAULT_SLIDEUPDOWN_CONFIG.maxHeight
   );
-
+  const timing = timingFunction[easing];
   const elementRef = useRef({
     style: { position: 'relative', top: `0px` },
   });
-
-  let timing = timingFunction[DEFAULT_SLIDEUPDOWN_CONFIG.easing];
 
   const draw = (progress) => {
     if (elementRef.current !== null) {
@@ -44,9 +42,6 @@ const SlideUpDown = memo((props) => {
     }
   };
 
-  if (timingFunction[easing]) {
-    timing = timingFunction[easing];
-  }
   useAnimationFrame({ delay, duration, timing, draw, iterationCount });
   return (
     <span ref={elementRef} style={elementRef.current.style}>
