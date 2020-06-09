@@ -21,7 +21,9 @@ const Pulse = memo((props) => {
   const scale = getScale(props.scale, DEFAULT_PULSE_CONFIG.scale);
   const timing = timingFunction[easing];
 
-  const elementRef = useRef({ style: { transform: 'scale(1,1)' } });
+  const elementRef = useRef({
+    style: { display: 'inline-block', transform: 'scale(1,1)' },
+  });
 
   const draw = (progress) => {
     if (elementRef.current != null) {
@@ -41,9 +43,9 @@ const Pulse = memo((props) => {
 
   useAnimationFrame({ delay, duration, timing, draw, iterationCount });
   return (
-    <div ref={elementRef} style={elementRef.current.style}>
+    <span ref={elementRef} style={elementRef.current.style}>
       {props.children}
-    </div>
+    </span>
   );
 });
 
