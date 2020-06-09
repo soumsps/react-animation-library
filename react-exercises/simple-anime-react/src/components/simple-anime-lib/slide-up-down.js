@@ -1,27 +1,36 @@
 import React, { useRef, memo } from 'react';
-import { useAnimationFrame, timingFunction } from './helper';
-import { DEFAULT_SLIDEUP_CONFIG } from './constants';
+import { DEFAULT_SLIDEUPDOWN_CONFIG } from './constants';
+import {
+  useAnimationFrame,
+  timingFunction,
+  getDelay,
+  getDuration,
+  getIterationCount,
+  getEasing,
+  getMaxHeight,
+} from './helper';
 
 const SlideUpDown = memo((props) => {
-  const delay = props.delay
-    ? Number(props.delay)
-    : DEFAULT_SLIDEUP_CONFIG.delay;
-  const duration = props.duration
-    ? Number(props.duration)
-    : DEFAULT_SLIDEUP_CONFIG.duration;
-  const iterationCount = props.iterationCount
-    ? Number(props.iterationCount)
-    : DEFAULT_SLIDEUP_CONFIG.iterationCount;
-  const easing = props.easing ? props.easing : DEFAULT_SLIDEUP_CONFIG.easing;
-  const maxHeight = props.maxHeight
-    ? Number(props.maxHeight)
-    : DEFAULT_SLIDEUP_CONFIG.maxHeight;
+  const delay = getDelay(props.delay, DEFAULT_SLIDEUPDOWN_CONFIG.delay);
+  const duration = getDuration(
+    props.duration,
+    DEFAULT_SLIDEUPDOWN_CONFIG.duration
+  );
+  const iterationCount = getIterationCount(
+    props.iterationCount,
+    DEFAULT_SLIDEUPDOWN_CONFIG.iterationCount
+  );
+  const easing = getEasing(props.easing, DEFAULT_SLIDEUPDOWN_CONFIG.easing);
+  const maxHeight = getMaxHeight(
+    props.maxHeight,
+    DEFAULT_SLIDEUPDOWN_CONFIG.maxHeight
+  );
 
   const elementRef = useRef({
     style: { position: 'relative', top: `0px` },
   });
 
-  let timing = timingFunction[DEFAULT_SLIDEUP_CONFIG.easing];
+  let timing = timingFunction[DEFAULT_SLIDEUPDOWN_CONFIG.easing];
 
   const draw = (progress) => {
     if (elementRef.current !== null) {

@@ -1,23 +1,24 @@
 import React, { useRef, memo } from 'react';
-import { useAnimationFrame, timingFunction } from './helper';
 import { DEFAULT_PULSE_CONFIG } from './constants';
+import {
+  useAnimationFrame,
+  timingFunction,
+  getDelay,
+  getDuration,
+  getIterationCount,
+  getEasing,
+  getScale,
+} from './helper';
 
 const Pulse = memo((props) => {
-  const delay = props.delay ? Number(props.delay) : DEFAULT_PULSE_CONFIG.delay;
-
-  const duration = props.duration
-    ? Number(props.duration)
-    : DEFAULT_PULSE_CONFIG.duration;
-
-  const iterationCount = props.iterationCount
-    ? Number(props.iterationCount)
-    : DEFAULT_PULSE_CONFIG.iterationCount;
-
-  const easing = props.easing ? props.easing : DEFAULT_PULSE_CONFIG.easing;
-
-  const scale = props.scale
-    ? Math.abs(Number(props.scale))
-    : DEFAULT_PULSE_CONFIG.scale;
+  const delay = getDelay(props.delay, DEFAULT_PULSE_CONFIG.delay);
+  const duration = getDuration(props.duration, DEFAULT_PULSE_CONFIG.duration);
+  const iterationCount = getIterationCount(
+    props.iterationCount,
+    DEFAULT_PULSE_CONFIG.iterationCount
+  );
+  const easing = getEasing(props.easing, DEFAULT_PULSE_CONFIG.easing);
+  const scale = getScale(props.scale, DEFAULT_PULSE_CONFIG.scale);
 
   const elementRef = useRef({ style: { transform: 'scale(1,1)' } });
   let timing = timingFunction[DEFAULT_PULSE_CONFIG.easing];

@@ -1,21 +1,27 @@
 import React, { useRef, memo } from 'react';
-import { useAnimationFrame, timingFunction } from './helper';
 import { DEFAULT_BOUNCE_CONFIG } from './constants';
+import {
+  useAnimationFrame,
+  timingFunction,
+  getDelay,
+  getDuration,
+  getIterationCount,
+  getEasing,
+  getDropHeight,
+} from './helper';
 
 const Bounce = memo((props) => {
-  const delay = props.delay ? Number(props.delay) : DEFAULT_BOUNCE_CONFIG.delay;
-
-  const duration = props.duration
-    ? Number(props.duration)
-    : DEFAULT_BOUNCE_CONFIG.duration;
-
-  const iterationCount = props.iterationCount
-    ? Number(props.iterationCount)
-    : DEFAULT_BOUNCE_CONFIG.iterationCount;
-
-  const easing = props.easing ? props.easing : DEFAULT_BOUNCE_CONFIG.easing;
-
-  const dropHeight = props.dropHeight ? Number(props.dropHeight) : -20;
+  const delay = getDelay(props.delay, DEFAULT_BOUNCE_CONFIG.delay);
+  const duration = getDuration(props.duration, DEFAULT_BOUNCE_CONFIG.duration);
+  const iterationCount = getIterationCount(
+    props.iterationCount,
+    DEFAULT_BOUNCE_CONFIG.iterationCount
+  );
+  const easing = getEasing(props.easing, DEFAULT_BOUNCE_CONFIG.easing);
+  const dropHeight = getDropHeight(
+    props.dropHeight,
+    DEFAULT_BOUNCE_CONFIG.dropHeight
+  );
 
   const elementRef = useRef({
     style: { position: 'relative', top: `0px` },

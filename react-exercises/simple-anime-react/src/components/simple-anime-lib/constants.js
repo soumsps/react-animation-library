@@ -24,7 +24,7 @@ const DEFAULT_PULSE_CONFIG = {
   easing: 'linear',
   scale: 1.2,
 };
-const DEFAULT_SLIDEUP_CONFIG = {
+const DEFAULT_SLIDEUPDOWN_CONFIG = {
   delay: 1000,
   duration: 2000,
   iterationCount: 1,
@@ -36,5 +36,5 @@ export {
   DEFAULT_BOUNCE_CONFIG,
   DEFAULT_FADEOUT_CONFIG,
   DEFAULT_PULSE_CONFIG,
-  DEFAULT_SLIDEUP_CONFIG,
+  DEFAULT_SLIDEUPDOWN_CONFIG,
 };

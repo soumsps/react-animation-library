@@ -1,18 +1,22 @@
 import React, { useRef, memo } from 'react';
-import { useAnimationFrame, timingFunction } from './helper';
 import { DEFAULT_FADEOUT_CONFIG } from './constants';
+import {
+  useAnimationFrame,
+  timingFunction,
+  getDelay,
+  getDuration,
+  getIterationCount,
+  getEasing,
+} from './helper';
 
 const FadeOut = memo((props) => {
-  const delay = props.delay
-    ? Number(props.delay)
-    : DEFAULT_FADEOUT_CONFIG.delay;
-  const duration = props.duration
-    ? Number(props.duration)
-    : DEFAULT_FADEOUT_CONFIG.duration;
-  const iterationCount = props.iterationCount
-    ? Number(props.iterationCount)
-    : DEFAULT_FADEOUT_CONFIG.iterationCount;
-  const easing = props.easing ? props.easing : DEFAULT_FADEOUT_CONFIG.easing;
+  const delay = getDelay(props.delay, DEFAULT_FADEOUT_CONFIG.delay);
+  const duration = getDuration(props.duration, DEFAULT_FADEOUT_CONFIG.duration);
+  const iterationCount = getIterationCount(
+    props.iterationCount,
+    DEFAULT_FADEOUT_CONFIG.iterationCount
+  );
+  const easing = getEasing(props.easing, DEFAULT_FADEOUT_CONFIG.easing);
 
   const elementRef = useRef({ style: { opacity: 1.0 } });
   let timing = timingFunction[DEFAULT_FADEOUT_CONFIG.easing];
