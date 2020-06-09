@@ -1,5 +1,5 @@
 import React, { useRef, memo } from 'react';
-import { DEFAULT_SLIDEUPDOWN_CONFIG } from './constants';
+import { DEFAULT_SLIDEUPDOWN_CONFIG } from '../constants';
 import {
   useAnimationFrame,
   timingFunction,
@@ -8,7 +8,7 @@ import {
   getIterationCount,
   getEasing,
   getMaxHeight,
-} from './helper';
+} from '../helper';
 
 const SlideUpDown = memo((props) => {
   const delay = getDelay(props.delay, DEFAULT_SLIDEUPDOWN_CONFIG.delay);

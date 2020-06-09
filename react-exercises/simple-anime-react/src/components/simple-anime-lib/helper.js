@@ -10,9 +10,9 @@ const useAnimationFrame = ({
   const rafRef = useRef();
   const iterationCountRef = useRef(iterationCount - 1);
   const animate = useCallback(() => {
-    var start = performance.now();
+    let start = performance.now();
     rafRef.current = requestAnimationFrame(function animate(time) {
-      var timeFraction = (time - start) / duration;
+      let timeFraction = (time - start) / duration;
       if (timeFraction >= 1) {
         if (iterationCountRef.current) {
           start = time;

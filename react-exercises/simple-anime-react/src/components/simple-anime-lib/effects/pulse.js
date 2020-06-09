@@ -1,5 +1,5 @@
 import React, { useRef, memo } from 'react';
-import { DEFAULT_PULSE_CONFIG } from './constants';
+import { DEFAULT_PULSE_CONFIG } from '../constants';
 import {
   useAnimationFrame,
   timingFunction,
@@ -8,7 +8,7 @@ import {
   getIterationCount,
   getEasing,
   getScale,
-} from './helper';
+} from '../helper';
 
 const Pulse = memo((props) => {
   const delay = getDelay(props.delay, DEFAULT_PULSE_CONFIG.delay);

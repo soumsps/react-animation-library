@@ -1,5 +1,5 @@
 import React, { useRef, memo } from 'react';
-import { DEFAULT_BOUNCE_CONFIG } from './constants';
+import { DEFAULT_BOUNCE_CONFIG } from '../constants';
 import {
   useAnimationFrame,
   timingFunction,
@@ -8,7 +8,7 @@ import {
   getIterationCount,
   getEasing,
   getDropHeight,
-} from './helper';
+} from '../helper';
 
 const Bounce = memo((props) => {
   const delay = getDelay(props.delay, DEFAULT_BOUNCE_CONFIG.delay);
