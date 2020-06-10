@@ -8,6 +8,7 @@ import {
   getIterationCount,
   getEasing,
   getScale,
+  getCallback,
 } from '../helper';
 
 const Pulse = memo((props) => {
@@ -18,6 +19,7 @@ const Pulse = memo((props) => {
     DEFAULT_PULSE_CONFIG.iterationCount
   );
   const easing = getEasing(props.easing, DEFAULT_PULSE_CONFIG.easing);
+  const callback = getCallback(props.callback, DEFAULT_PULSE_CONFIG.callback);
   const scale = getScale(props.scale, DEFAULT_PULSE_CONFIG.scale);
   const timing = timingFunction[easing];
 
@@ -41,7 +43,14 @@ const Pulse = memo((props) => {
     }
   };
 
-  useAnimationFrame({ delay, duration, timing, draw, iterationCount });
+  useAnimationFrame({
+    delay,
+    duration,
+    callback,
+    iterationCount,
+    timing,
+    draw,
+  });
   return (
     <span ref={elementRef} style={elementRef.current.style}>
       {props.children}

@@ -8,6 +8,7 @@ import {
   getIterationCount,
   getEasing,
   getMaxHeight,
+  getCallback,
 } from '../helper';
 
 const SlideUpDown = memo((props) => {
@@ -21,6 +22,10 @@ const SlideUpDown = memo((props) => {
     DEFAULT_SLIDEUPDOWN_CONFIG.iterationCount
   );
   const easing = getEasing(props.easing, DEFAULT_SLIDEUPDOWN_CONFIG.easing);
+  const callback = getCallback(
+    props.callback,
+    DEFAULT_SLIDEUPDOWN_CONFIG.callback
+  );
   const maxHeight = getMaxHeight(
     props.maxHeight,
     DEFAULT_SLIDEUPDOWN_CONFIG.maxHeight
@@ -42,7 +47,14 @@ const SlideUpDown = memo((props) => {
     }
   };
 
-  useAnimationFrame({ delay, duration, timing, draw, iterationCount });
+  useAnimationFrame({
+    delay,
+    duration,
+    callback,
+    iterationCount,
+    timing,
+    draw,
+  });
   return (
     <span ref={elementRef} style={elementRef.current.style}>
       {props.children}
