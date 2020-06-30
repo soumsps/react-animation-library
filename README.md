@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9dab6475-0c71-4736-b523-86d369c87cbc/deploy-status)](https://app.netlify.com/sites/animation-lib-soumsps/deploys)
+
 # Instructions
 
 Create a simple animation library that have the following things. Expose the API as React Components.
