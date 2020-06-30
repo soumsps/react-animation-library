@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, navigate } from '@reach/router';
-import Homepage from '../src/pages/homepage/homepage.page';
+import Homepage from './pages/homepage/homepage.page';
 import BounceDemo from './components/demos/bounce';
 import PulseDemo from './components/demos/pulse';
 import FadeInDemo from './components/demos/fade-in';

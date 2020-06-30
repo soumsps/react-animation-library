@@ -4,7 +4,7 @@ const Homepage = () => {
   return (
     <div>
       <a
-        href="https://github.com/pesto-students/deep-dive-ashwinishere/tree/ashwin/simple-anime-react/react-exercises/simple-anime-react"
+        href="https://github.com/soumsps/react-animation-library/"
         target="_blank"
         rel="noopener noreferrer"
       >
